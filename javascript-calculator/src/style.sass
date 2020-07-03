@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto+Condensed&display=swap')
+
+$color1: rgb(15, 17, 12)
+$color2: rgb(157, 99, 129)
+$color3: rgb(253, 236, 239)
+$color4: rgb(206, 204, 204)
+$color5: rgb(97, 41, 64)
+$font: 'Roboto Condensed', sans-serif
+
+#title-container
+  align-self: flex-start
+  position: absolute
+  bottom: -150px
+  animation-name: slide-in
+  animation-duration: 2s
+  animation-fill-mode: forwards
+  margin-left: 20px
+    
+#title
+  font-family: 'Montserrat', sans-serif
+  margin: 0px
+  padding: 5px
+#creator
+  margin: 0px
+  padding: 5px
+  font-family: 'Raleway', sans-serif
+
+@keyframes slide-in
+  0%
+    position: absolute
+    bottom: -150px
+  100%
+    bottom: 10px
+  
+    
+body
+  overflow: hidden
+  height: 100vh
+  margin: 0px
+  background-color: $color4
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  
+#main
+  vertical-align: top
+  font-family: $font
+  border: 5px solid $color5
+  width: 300px
+  height: 400px
+  display: grid
+  grid-template-columns: 70px 70px 70px 45px 45px
+  grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr 
+  grid-template-areas: "d d d d d" "d2 d2 d2 d2 d2" "n7 n8 n9 c c" "n4 n5 n6 o o" "n1 n2 n3 . ." "n0 n0 dec e e"
+  background-color: $color5
+  border-radius: 2%
+  box-shadow: 5px 5px 5px rgba(0,0,0, .4), -5px 5px 5px rgba(0,0,0,.4)
+  
+#display
+  grid-area: d2
+  background-color: $color3
+  text-align: right
+  font-size: 30px
+  opacity: .8
+  position: relative
+  bottom: 20px
+  height: 60px
+  padding-right: 5px
+
+  
+#display-content
+  position: relative
+  top: 20px
+#equation-holder
+  background-color: $color3
+  grid-area: d
+  border-radius: 3px 3px 0px 0px
+  overflow: hidden
+  opacity: .9
+  height: 30px
+  
+#equation
+  margin-right: 5px
+  float: right
+ 
+.number
+  background-color: $color2
+  color: $color1
+  border: none
+  z-index: 1
+  margin: 1px
+  
+button
+  outline: none
+  font-family: $font
+  font-size: 30px
+  margin: 1px
+  border-radius: 1%
+  &:hover
+    cursor: pointer
+    transition: .3s
+    opacity: .7
+    border: 2px solid $color3
+    
+  
+.operator
+  color: $color4
+  background-color: $color1
+  border: none
+  
+#clear
+  grid-area: c
+  
+#one
+  grid-area: n1
+  
+#two
+  grid-area: n2
+
+#three
+  grid-area: n3
+
+#four
+  grid-area: n4
+ 
+#five
+  grid-area: n5
+
+#six
+  grid-area: n6
+ 
+#seven
+  grid-area: n7
+  
+#eight
+  grid-area: n8
+ 
+#nine
+  grid-area: n9
+  
+#zero
+  grid-area: n0
+  
+#decimal
+  grid-area: dec
+  
+#equals
+  grid-area: e
