@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap");
+button:focus {
+  outline: thin dotted;
+}
+button:hover {
+  cursor: pointer;
+  outline: 2px solid #ffc482;
+  transition: 0.1s;
+  opacity: 0.8;
+}
+
+body {
+  background-color: #496a81;
+  font-family: "Montserrat", sans-serif;
+}
+
+#main {
+  margin: auto;
+  margin-top: 30px;
+  background-color: #66999b;
+  height: 500px;
+  border-radius: 10%;
+  width: 500px;
+  color: #b3af8f;
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 250px 250px;
+  grid-template-areas: "break session" "clock clock";
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5), -5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#break-label, #session-label {
+  margin: 0px;
+  position: relative;
+  bottom: 10px;
+  font-size: 25px;
+  opacity: 0.8;
+}
+
+#break-length, #session-length {
+  font-family: "Orbitron", sans-serif;
+  margin: 0px;
+  font-size: 40px;
+}
+
+#button-container {
+  position: relative;
+  top: 10px;
+  opacity: 0.8;
+}
+#button-container button {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #66999b;
+  border: none;
+  width: 50px;
+  height: 30px;
+}
+
+#break-container {
+  border-radius: 10%;
+  background-color: #2b3a67;
+  text-align: center;
+  width: 200px;
+  height: 170px;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 6px solid #b3af8f;
+  grid-area: break;
+}
+#break-container:hover {
+  opacity: 0.95;
+  transition: 0.3s;
+}
+
+#session-container {
+  border-radius: 10%;
+  background-color: #2b3a67;
+  text-align: center;
+  width: 200px;
+  height: 170px;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 6px solid #b3af8f;
+  grid-area: session;
+}
+#session-container:hover {
+  opacity: 0.95;
+  transition: 0.3s;
+}
+
+#timer-container {
+  border: 6px solid #b3af8f;
+  border-radius: 10%;
+  grid-area: clock;
+  margin: auto;
+  width: 450px;
+  text-align: center;
+  background-color: #2b3a67;
+  height: 250px;
+  position: relative;
+  bottom: 23px;
+}
+#timer-container:hover {
+  opacity: 0.95;
+  transition: 0.3s;
+}
+#timer-container #timer-label {
+  font-size: 25px;
+  background-color: #496a81;
+  color: #2b3a67;
+  margin: 10px 160px 10px 160px;
+  opacity: 0.8;
+  border-radius: 10%;
+}
+#timer-container #time-left {
+  border: 5px solid #b3af8f;
+  font-family: "Orbitron", sans-serif;
+  font-size: 105px;
+  background-color: #ffc482;
+  opacity: 0.9;
+  color: #2b3a67;
+  margin: 0px 25px;
+  border-radius: 15%;
+}
+#timer-container #controls button {
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.8;
+  margin: 10px;
+  background-color: #66999b;
+  border: none;
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+}

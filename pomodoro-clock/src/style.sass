@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap')
+$color1: rgb(43, 58, 103)
+$color2: rgb(73, 106, 129)
+$color3: rgb(255, 196, 130)
+$color4: rgb(179, 175, 143)
+$color5: rgb(102, 153, 155)
+$font: "Orbitron", sans-serif
+$bg-font: "Montserrat", sans-serif
+
+button
+  &:focus
+    outline: thin dotted
+  &:hover
+    cursor: pointer
+    outline: 2px solid $color3
+    transition: .1s
+    opacity: .8
+  
+body 
+  background-color: $color2
+  font-family: $bg-font
+
+#main
+  margin: auto
+  margin-top: 30px
+  background-color: $color5
+  height: 500px
+  border-radius: 10%
+  width: 500px
+  color: $color4
+  display: grid
+  grid-template-columns: 250px 250px 
+  grid-template-rows: 250px 250px
+  grid-template-areas: "break session" "clock clock"
+  box-shadow: 5px 5px 5px rgba(0,0,0, .5), -5px 5px 5px rgba(0,0,0,.3)
+
+@mixin container-setup
+  border-radius: 10%
+  background-color: $color1
+  text-align: center
+  width: 200px
+  height: 170px
+  overflow: hidden
+  margin: auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  border: 6px solid $color4
+  &:hover
+    opacity: .95
+    transition: .3s
+  
+#break-label, #session-label
+  margin: 0px
+  position: relative
+  bottom: 10px
+  font-size: 25px
+  opacity: .8
+  
+  
+#break-length, #session-length
+  font-family: $font
+  margin: 0px
+  font-size: 40px
+  
+#button-container  
+  position: relative
+  top: 10px
+  opacity: .8
+  button
+    margin-left: 10px
+    margin-right: 10px
+    background-color: $color5
+    border: none
+    width: 50px
+    height: 30px
+    
+#break-container
+  @include container-setup
+  grid-area: break
+   
+#session-container
+  @include container-setup
+  grid-area: session
+  
+#timer-container
+  border: 6px solid $color4
+  border-radius: 10%
+  grid-area: clock
+  margin: auto
+  width: 450px
+  text-align: center
+  background-color: $color1
+  height: 250px
+  position: relative
+  bottom: 23px
+  &:hover
+    opacity: .95
+    transition: .3s
+  
+  #timer-label
+    font-size: 25px
+    background-color: $color2
+    color: $color1
+    margin: 10px 160px 10px 160px
+    opacity: .8
+    border-radius: 10%
+    
+  #time-left
+    border: 5px solid $color4
+    font-family: $font
+    font-size: 105px
+    background-color: $color3
+    opacity: .9
+    color: $color1
+    margin: 0px 25px
+    border-radius: 15%
+    
+  #controls
+    button
+      font-family: $bg-font
+      opacity: .8
+      margin: 10px
+      background-color: $color5
+      border: none
+      width: 60px
+      height: 30px
+      font-size: 15px
+ 
+          
