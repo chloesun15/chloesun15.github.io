@@ -2,7 +2,7 @@
 
 ## Github Projects
 
-###FreeCodeCamp Projects
+### FreeCodeCamp Projects
 
 1. __Pomodoro Clock Project:__ [Pomodoro Clock Project](/pomodoro-clock/dist/index.html).
 	* This clock allows you to set a length for breaks and for work sessions. Once started, the timer will count
