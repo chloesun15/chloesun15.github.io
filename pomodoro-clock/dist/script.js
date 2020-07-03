@@ -1,9 +1,7 @@
-// create Presentational component
 class Presentational extends React.Component {
   constructor(props) {
     super(props);
 
-    // set state
     this.state = {
       breakLength: 5,
       sessionLength: 25,
@@ -26,7 +24,6 @@ class Presentational extends React.Component {
     this.handleSwitch = this.handleSwitch.bind(this);
   }
 
-// clears any running clock, any audio, and resets to original state
   handleReset() {
     clearInterval(this.timerID);
     this.audioBeep.pause();
@@ -34,58 +31,39 @@ class Presentational extends React.Component {
     this.setState({ breakLength: 5, sessionLength: 25, min: 25, sec: 0, newSession: true, on: false, type: "session" }, () => {this.setDisplay();});
   }
 
-// when a break begins, change type to break, update timer values, and then turn timer on
   handleBreak() {
+    console.log(this.state);
     this.setState(state => ({ type: "break", min: state.breakLength, sec: 0 }), () => {this.timerOn();});
   }
 
   timerOn() {
     this.setDisplay();
-
-    // clear any previous timer
     clearInterval(this.timerID);
-
-    // calls function to decrease timer values every second
-    // saves interval to a local component variable
     this.timerID = setInterval(() => {
       this.decrementTimer();
     }, 1000);
   }
 
-
   decrementTimer() {
-    // gets current minutes and seconds
     var min = this.state.min;
     var sec = this.state.sec;
-
-    // decrease seconds
     if (sec > 0) {
       sec--;
     } else {
-
-    // if 00 seconds, then subtract a minute and set seconds to 59
       sec = 59;
       min--;
     }
-
-    // update state with new timer values, and set new display
     this.setState({ min: min, sec: sec });
     this.setDisplay();
-
-    // if the timer runs out,then we play audio and stop timer
     if (min == 0 & sec == 0) {
       this.setState({ min: min, sec: sec });
       this.setDisplay();
       this.audioBeep.play();
       clearInterval(this.timerID);
-
-      // waits one second and then switches our session type
       setTimeout(this.handleSwitch, 1000);
     }
   }
 
-
-// checks to see if we need a break or work session, and calls the appropriate function
   handleSwitch() {
     if (this.state.type == "session") {
       this.handleBreak();
@@ -94,12 +72,9 @@ class Presentational extends React.Component {
     }
   }
 
-// uses current timer values to create a string for the display
   setDisplay() {
     var min = String(this.state.min);
     var sec = String(this.state.sec);
-
-    // if minute or seconds are 1 digit, then we add a 0 in front
     if (min.length == 1) {
       min = "0" + min;
     }
@@ -110,68 +85,54 @@ class Presentational extends React.Component {
   }
 
   handleStart() {
-    // if this is a new session, then we set timer values to session length and then start timer
+    console.log(this.state);
     if (this.state.newSession == true) {
       this.setState(state => ({ min: state.sessionLength, sec: 0, newSession: false }), () => {this.timerOn();});
     } else {
-
-    // if it is not a new session, we keep the current timer values and start timer
       this.timerOn();
     }
   }
 
-// this function is called by pressing the pause/play button
   handleStartStop() {
-
-  //if the timer is on, then we stop it
+    console.log(this.state.on);
     if (this.state.on == true) {
       clearInterval(this.timerID);
       this.setState({ on: false });
     } else {
-
-  // if the timer is not on, then we call handleStart() to evaluate what to do next
       this.setState({ on: true });
       this.handleStart();
     }
   }
 
-// function that handles click for the increment and decrement length buttons
   handleClick(event) {
     var id = event.target.id;
-
-    // cycling through the different button ids and updating state accordingly
     switch (id) {
       case "break-decrement":
         if (this.state.breakLength > 1) {
           this.setState(state => ({ breakLength: state.breakLength - 1 }), () => {this.setDisplay();});
         }
         break;
-
       case "break-increment":
         if (this.state.breakLength < 60) {
           this.setState(state => ({ breakLength: state.breakLength + 1 }), () => {this.setDisplay();});
         }
         break;
-
       case "session-decrement":
         if (this.state.sessionLength > 1) {
           this.setState(state => ({ sessionLength: state.sessionLength - 1 }), () => {this.setDisplay();});
         }
         break;
-
       case "session-increment":
         if (this.state.sessionLength < 60) {
           this.setState(state => ({ sessionLength: state.sessionLength + 1 }), () => {this.setDisplay();});
         }
         break;}
 
-    // if we are in a new session, then update timer values with new session values
     if (this.state.newSession == true) {
       this.setState(state => ({ min: state.sessionLength, sec: 0 }));}
     this.setDisplay();
   }
 
-// html elements to render
   render() {
     return (
       React.createElement("div", { id: "main" },
@@ -209,7 +170,7 @@ class Presentational extends React.Component {
   }}
 
 
-// parent App component
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -222,5 +183,5 @@ class App extends React.Component {
 
   }}
 
-// render App
+
 ReactDOM.render(React.createElement(App, null), document.getElementById("app"));

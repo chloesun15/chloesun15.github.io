@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto+Condensed&display=swap");
 #title-container {
+  color: #9d6381;
   align-self: flex-start;
   position: absolute;
   bottom: -150px;
@@ -7,18 +8,30 @@
   animation-duration: 2s;
   animation-fill-mode: forwards;
   margin-left: 20px;
+  opaicty: 0.9;
 }
 
 #title {
+  font-size: 50px;
   font-family: "Montserrat", sans-serif;
   margin: 0px;
   padding: 5px;
 }
 
 #creator {
+  color: #9d6381;
+  font-size: 30px;
   margin: 0px;
   padding: 5px;
   font-family: "Raleway", sans-serif;
+  text-decoration: none;
+}
+#creator:visited {
+  color: #9d6381;
+}
+#creator:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 @keyframes slide-in {
