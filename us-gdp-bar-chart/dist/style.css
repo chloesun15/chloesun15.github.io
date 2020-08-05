@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+body {
+  background-color: #ee6c4d;
+}
+
+#chart {
+  border-radius: 3%;
+  background-color: #e0fbfc;
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  box-shadow: 10px 10px 10px rgba(41, 50, 65, 0.5), -10px 10px 10px rgba(41, 50, 65, 0.5);
+  transition: 0.3s;
+  opacity: 0.9;
+}
+#chart:hover {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+#title {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  font-size: 40px;
+  opacity: 0.9;
+  color: #ee6c4d;
+  margin-bottom: 0px;
+}
+
+#gdp-label {
+  stroke: #ee6c4d;
+  opacity: 0.7;
+}
+
+svg {
+  font-family: "Quicksand", sans-serif;
+}
+svg g line, svg g path {
+  stroke-width: 2px;
+  stroke: #98c1d9;
+}
+svg g text {
+  font-size: 10px;
+  font-family: "Quicksand", sans-serif;
+  color: #293241;
+}
+
+#svgcontainer {
+  margin: auto;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  bottom: 20px;
+}
+
+.bar {
+  fill: #3d5a80;
+  fill-opacity: 1;
+}
+.bar:hover {
+  fill: #98c1d9;
+}
+
+#tooltip {
+  font-family: "Quicksand", sans-serif;
+  background-color: #98c1d9;
+  padding: 10px;
+  transition: opacity 0.5s;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3%;
+}
+#tooltip h2 {
+  color: #293241;
+  align-self: stretch;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  opacity: 0.5;
+  height: 100%;
+  text-align: left;
+}
+#tooltip h2::after {
+  content: "";
+  height: 100%;
+  border-right: solid 3px #e0fbfc;
+  position: absolute;
+  left: 61px;
+  bottom: 0px;
+}
+#tooltip p {
+  color: #293241;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  align-self: center;
+  text-align: center;
+  position: relative;
+  left: 7px;
+  top: 5px;
+}

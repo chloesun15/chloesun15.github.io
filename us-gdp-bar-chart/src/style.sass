@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap')
+$color1: rgb(61, 90, 128)
+$color2: rgb(152, 193, 217)
+$color3: rgb(224, 251, 252)
+$color4: rgb(238, 108, 77)
+$color5: rgb(41, 50, 65)
+$main-font: 'Quicksand', sans-serif
+
+body
+  background-color: $color4
+  
+#chart
+    border-radius: 3%
+    background-color: $color3
+    width: 1000px
+    height: 600px
+    margin: auto
+    box-shadow: 10px 10px 10px rgba(41, 50, 65,.5), -10px 10px 10px rgba(41, 50, 65,.5)
+    transition: .3s
+    opacity: .9
+    &:hover
+      opacity: 1
+      transform: scale(1.01)
+    
+#title
+  font-family: $main-font
+  text-align: center
+  position: relative
+  top: 20px
+  font-size: 40px
+  opacity: .9
+  color: $color4
+  margin-bottom: 0px
+  
+#gdp-label
+    stroke: $color4
+    opacity: .7
+  
+svg
+  font-family: $main-font
+  g
+    line, path
+      stroke-width: 2px
+      stroke: $color2
+    text
+      font-size: 10px
+      font-family: $main-font
+      color: $color5
+  
+#svgcontainer
+  margin: auto
+  width: 900px
+  height: 600px
+  position: relative
+  bottom: 20px
+  
+.bar
+  fill: $color1
+  fill-opacity: 1
+  &:hover 
+    fill: $color2
+  
+    
+#tooltip
+  font-family: $main-font
+  background-color: $color2
+  padding: 10px
+  transition: opacity .5s
+  width: 120px
+  height: 50px
+  display: flex
+  justify-content: space-between
+  border-radius: 3%
+  
+  h2 
+    color: $color5
+    align-self: stretch
+    font-size: 20px
+    margin: 0px
+    padding: 0px
+    opacity: .5
+    height: 100%
+    text-align: left
+    
+    &::after
+      content: ''
+      height: 100%
+      border-right: solid 3px $color3
+      position: absolute
+      left: 61px
+      bottom: 0px
+     
+  p 
+    color: $color5
+    height: 100%
+    margin: 0px
+    padding: 0px
+    align-self: center
+    text-align: center
+    position: relative
+    left: 7px
+    top: 5px

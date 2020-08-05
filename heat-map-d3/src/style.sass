@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400&family=Roboto&display=swap')
+
+$color1: #aba1a1
+$color2: #40386b
+$color3: #fff2f2
+$main-font: 'Overpass', sans-serif
+$sub-font: 'Roboto', sans-serif
+
+body
+  background-color: $color2
+  
+  
+=container-style
+  box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.5)
+  display: flex
+  flex-direction: column
+  
+
+#chart
+  +container-style
+  font-family: $main-font
+  color: $color2
+  background-color: $color3
+  align-items: center
+  height: 100%
+  width: 100vw
+  margin: auto
+  opacity: .9
+  transition: .3s
+  border: 30px solid white
+  @media screen and (max-width: 1000px)
+    width: 1000px
+  @media screen and (min-width: 1100px)
+    width: 1100px
+  h1
+    padding-top: 20px
+    padding-bottom: 0px
+    margin: 0px
+  #title, #description
+    padding: 0
+    margin: 0
+  p
+    padding: 5px 0px
+    font-family: $sub-font
+    font-size: 20px
+    margin: 0px
+  &:hover
+    transform: scale(1.01)
+    opacity: 1
+  
+#svg-container
+  margin: 0
+  padding: 0px 20px
+  
+  svg
+    vertical-align: top
+  rect
+    &:hover
+      stroke-width: 1px
+      stroke: white
+    
+  g
+    font-size: 12px
+    font-family: 'Roboto'
+
+#legend
+  margin: 0
+  padding: 0
+  position: relative
+  display: flex
+  bottom: 30px
+  flex-direction: column
+  width: 520px
+  margin: auto
+  
+  text
+    font-size: 20px
+  
+#tooltip
+  +container-style
+  font-family: $main-font
+  box-shadow: none
+  position: absolute
+  background-color: white
+  opacity: .8
+  transition: opacity .3s
+  padding: 8px 12px
+  h3, p, h4
+    text-align: left
+    padding: 0px
+    margin: 0px
+    display: inline-block
+  p, h4
+    font-family: $sub-font
+  h4
+    font-style: italic
+  p
+    font-size: 15px

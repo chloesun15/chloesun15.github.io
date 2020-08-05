@@ -1,0 +1,42 @@
+<!-- Free Code Camp SURVEY -->
+<div id="background-split"></div>
+<div id="header">
+<h1 id="title">Lorem Ipsum Survey</h1>
+  <p id="description">We would like to know more about your familiarity with lorem ipsum.</p>
+</div>
+
+<form id="survey-form">
+  <label for="name" id="name-label">Name
+  </label>
+<input id="name" placeholder="Enter your name" required>
+    <label for="email" id="email-label" >Email</label>
+<input id="email" type="email" placeholder="Enter your email" required>
+    <label for="number" id="number-label">Age</label>
+<input id="number" min="0" max="100" type="number" placeholder="Age">
+  <p> How familiar are you with lorem ipsum? </p>
+  <select id="dropdown" required>
+     <option value="" disabled selected>Select an option</option>
+    <option>Not Familiar</option>
+    <option>Somewhat Familiar</option>
+    <option>Moderately Familiar</option>
+    <option>Very Familiar</option>
+  </select>
+  <p> Could you recite the first line of lorem ipsum from memory? </p>
+  <ul>
+    <li><label for="yes"></label>
+    <input value="yes" id="yes" type="radio" name="recite" required> Yes</li>
+<li><label for="no"></label>
+    <input value="no" id="no" type="radio" name="recite"> No</li>
+  </ul>
+<p> Where have you encountered lorem ipsum before? Check all that apply.</p>
+  <ul>
+    <li><input value="classroom" type="checkbox"> Classroom </li>
+    <li><input value="forum" type="checkbox"> Online Forum </li>
+    <li><input value="app" type="checkbox"> Computer Application </li>
+    <li><input value="other" type="checkbox"> Other </li>
+  </ul>
+  <p> If you responded <u>other</u>, please elaborate here.</p>
+<textarea id="comments"></textarea>
+  <p id="thanks"> Thank you for taking our survey! </p>
+<button id="submit"> Submit </button>
+</form>

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron:wght@400;500&display=swap')
+
+$accent-color-1: #14213d
+$accent-color-2: #ffffff
+$accent-color-3: #fca311
+$accent-color-4: #e5e5e5
+$bg-font: "Orbitron", sans-serif
+$btn-font: "Montserrat", sans-serif
+
+  
+body
+  background-color: $accent-color-3
+  font-family: $bg-font
+  
+#drum-machine
+  overflow: hidden
+  background-color: $accent-color-4
+  border: 3px 
+  position: relative
+  margin: auto
+  text-align: center
+  border: 5px outset $accent-color-2
+  width: 400px
+  display: grid
+  height: 400px
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: repeat(4, 100px)
+  grid-template-areas: "header header header"
+  margin-top: 5vw
+  border-radius: 4px
+  
+  #display
+    grid-area: header
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+    opacity: .6
+    
+.drum-pad
+  margin: 10px
+  font-size: 20px
+  font-family: $btn-font
+  color: $accent-color-1
+  background-color: $accent-color-2
+  border: 2px outset $accent-color-4
+  font-weight: bold
+  transition: .3s
+  outline: none
+  border-radius: 4px
+  &:hover
+    cursor: pointer
+    opacity: .6
+    transform: scale(1.01)
+  
+#content-container
+  margin: auto
+  background-color: $accent-color-2
+  border: 2px solid $accent-color-3
+  width: 250px
+  height: 50px
+  border-radius: 4px
+  
+#content
+  padding: 0px
+  margin: 5px
+  color: $accent-color-1
+  
+#volume
+  margin: auto
+i 
+  margin: 2px
+  padding: 3px
+  
+.slider
+  position: relative
+  bottom: 5px
+  -webkit-appearance: none
+  height: 3px
+  border-radius: 20%
+  background: $accent-color-3
+  opacity: 1
+  -webkit-transition: .2s
+  transition: opacity .2s
+  outline: none
+  &:hover
+    opacity: 1
+    
+.slider::-webkit-slider-thumb 
+  -webkit-appearance: none
+  background: $accent-color-1
+  width: 10px
+  height: 25px
+  cursor: pointer
+  box-shadow: 1px 1px 3px #000
+  transition: .3s
+  opacity: 1
+  &:hover
+    opacity: .9

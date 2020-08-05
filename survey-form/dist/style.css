@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Lato&display=swap');
+
+ul{
+  list-style: none;
+  margin: 0px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+  background-color: #fff;
+  padding: 30px;
+  opacity: .85;
+  border-radius: 1em;
+  color: #1D3557;
+  font-size: 18px;
+  text-align: left;
+  font-family: "Epilogue", sans-serif;
+  transition: .3s ease-in;
+}
+
+form:hover{
+  opacity: .9;
+  transform: scale(1.01);
+}
+
+form p{
+  font-size: 20px;
+  margin: 10px 0px;
+}
+
+form label{
+  font-size: 20px
+}
+
+textarea, input, select{
+  transition: .3s ease-in;
+  border: 2px inset rgba(69, 123, 157, .7);
+  border-radius: 5px;
+  background-color: #f1faee;
+  opacity: .8;
+  font-size: 20px;
+  font-family: "Lato", sans-serif
+}
+
+input:checked{
+  opacity: 1;
+}
+
+#number, #name, #email, select, textarea{
+  padding-left: 10px;
+  height: 40px;
+  margin: 5px 0px;
+}
+
+#number, #name, #email{
+  margin-bottom: 10px;
+}
+
+select{
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+textarea:focus, select:focus, input:focus{
+  outline: none;
+  opacity: 1;
+}
+
+
+body{
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pd19-minty-01-leaf_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=eeb223b13539feb7925af0a1945b5e0c");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  text-align: center;
+  color: #f1faee;
+  margin: 0px;
+  padding: 0px;
+}
+
+#title{
+  font-family: "Epilogue", sans-serif;
+  margin-bottom: 0px;
+  padding: 2px;
+}
+#description{
+  font-family: "Lato", sans-serif;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  opacity: .9;
+}
+
+#submit{
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+  margin: auto;
+  width: 90px;
+  background-color: #457B9D;
+  color: #F1FAEE;
+  border: none;
+  opacity: 1;
+  height: 30px;
+  border-radius: 5px;
+  transition: .3s ease-in;
+}
+
+#submit:hover{
+  opacity: .8;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#thanks{
+  text-align: center;
+}
+
+
+body::before{
+  content: "";
+  width: 100vw;
+  height: 30vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #1D3557;
+  z-index: 0;
+  opacity: .9;
+}
+
+#header{
+  position: relative;
+  z-index: 10;
+}
+
+textarea{
+  padding-top: 5px;
+  height: 60px;
+  margin-top: 0px;
+}

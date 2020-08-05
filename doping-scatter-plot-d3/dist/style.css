@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap");
+html, body {
+  color: #22223b;
+  padding: 0;
+  margin: 0;
+  background-color: #4a4e69;
+}
+
+#chart {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4%;
+  opacity: 0.9;
+  transition: 0.3s;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #f2e9e4;
+  width: 830px;
+  height: 550px;
+  padding: 5px 5px;
+}
+#chart:hover {
+  opacity: 1;
+  transform: scale(1.01) rotate(0.01deg);
+}
+
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#y-label {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+}
+
+#svg-container {
+  height: 600px;
+  width: 800px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 0px;
+}
+#svg-container circle {
+  stroke: #22223b;
+  stroke-width: 2px;
+  transition: ease 0.15s;
+}
+
+#legend {
+  font-family: "Fira Sans", sans-serif;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4%;
+  opacity: 0.9;
+  transition: 0.3s;
+  box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.7);
+  position: relative;
+  width: 120px;
+  height: 150px;
+  left: 600px;
+  bottom: 250px;
+  display: grid;
+  grid-template-columns: 30px 90px;
+  grid-template-rows: 40px 80px;
+  background-color: #c9ada7;
+  grid-template-areas: "header header" "dots desc";
+  align-items: center;
+  justify-items: center;
+}
+#legend:hover {
+  opacity: 1;
+  transform: scale(1.01) rotate(0.01deg);
+}
+#legend #legend-title {
+  grid-area: header;
+}
+#legend #legend-info {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  top: 7px;
+  right: 3px;
+  grid-area: desc;
+  text-align: left;
+  font-size: 15px;
+}
+#legend svg {
+  position: relative;
+  top: 5px;
+  grid-area: dots;
+}
+
+#legend-svg {
+  margin: 0;
+  padding: 0;
+  grid-area: dots;
+}
+
+#tooltip {
+  color: #c9ada7;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4%;
+  opacity: 0.9;
+  transition: 0.3s;
+  box-shadow: none;
+  position: absolute;
+  background-color: #22223b;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+#tooltip:hover {
+  opacity: 1;
+  transform: scale(1.01) rotate(0.01deg);
+}
+#tooltip h3, #tooltip p, #tooltip h4 {
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+#tooltip h3 {
+  font-family: "Fira Sans", sans-serif;
+}
+#tooltip p, #tooltip h4 {
+  font-family: "Roboto", sans-serif;
+}
+#tooltip h4 {
+  font-style: italic;
+}

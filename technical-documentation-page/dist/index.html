@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Documentation Page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav id="navbar">
+  <header> Lorem Ipsum </header>
+    <a class="nav-link" href="#Standard_Lorem_Ipsum">Standard Lorem Ipsum</a>
+    <a class="nav-link" href="#Generated_Lorem_Ipsum">Generated Lorem Ipsum</a>
+    <a class="nav-link" href="#No_Lorem_Ipsum_Start">No Lorem Ipsum Start</a>
+    <a class="nav-link" href="#Added_Punctuation">Added Punctuation</a>
+    <a class="nav-link" href="#Randomly_Generated_Esperanto">Randomly Generated Esperanto</a>     
+    <a class="nav-link" href="#Making_a_Generator">Making a Generator</a>
+ </nav>
+<main id="main-doc">
+  <section class="main-section" id="Standard_Lorem_Ipsum">
+  <header> Standard Lorem Ipsum </header>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+  </section>
+  <section class="main-section" id="Generated_Lorem_Ipsum">
+    <header> Generated Lorem Ipsum </header>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum dui faucibus in ornare quam viverra orci. Ut porttitor leo a diam sollicitudin tempor. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Placerat duis ultricies lacus sed turpis tincidunt id aliquet. Proin nibh nisl condimentum id venenatis a condimentum vitae. Cum sociis natoque penatibus et. Porttitor eget dolor morbi non arcu. Dui id ornare arcu odio.
+  </section>
+  <section class="main-section" id="No_Lorem_Ipsum_Start">
+<header> No Lorem Ipsum Start</header>
+    <p> Indoctum concludaturque id has. Nam volutpat expetendis ne, duo ad nisl iudicabit. Per ea novum quando sadipscing, ullum iriure reprehendunt pri ut, in mel tota dicta maiorum. Eu alii perfecto recteque nec, in aeterno detracto voluptatibus eam, nam in fastidii elaboraret.
+ </p>
+  </section>
+    <section class="main-section" id="Added_Punctuation">
+<header>Added Punctuation</header>
+    <p> Lorem ipsum dolor sit amet, veri consequuntur an vis? Te mea aliquam noluisse, per ne justo prompta! Mea quod alienum cu, elit aperiri per et? Et sumo incorrupte quo.
+ </p>
+</section>
+  <section class="main-section" id="Randomly_Generated_Esperanto">
+<header> Randomly Generated Esperanto</header>
+    <p>
+Per deci kies festo dz, ho semi trudi ina. Tc int dekuma literaturo. Aj anc anstataŭ propozicio, os plia vic' tia. So kie cent kiomas, zeta piedpilko dio jo.</p>
+<p> Ec ian tiom kies subjunkcio. Stil tagnokto profitanto fi unu. Fin danke manier pantalono nj, op pov kvanta preterito adjektiva. Duo nulo oble ni, un' stif movi ne, gv zepto kasedo malsupera anc. Orda tiaĵo elnombrado kv ies, eligi memkompreneble eca fi. Iel neni tempolongo id, vo ajn tohuo alparolato.
+</p>
+<ul> Other artificial languages you can generate filler text with (on <a href="https://generator.lorem-ipsum.info/_esperanto" target="_blank"> this </a> lorem ipsum generator):
+      <li> Interlingua </li>
+      <li> Quenya </li>
+      <li> Slovio </li>
+      <li> Sona </li>
+      <li> Tokipona </li>
+    </ul>
+  </section>
+  <section class="main-section" id="Making_a_Generator">
+    <header> Making a Generator</header>
+    <p> Let's try making a simply Lorem Ipsum generator in Python. Start with a string that contains the lorem ipsum standard section. When we want generator with even more capability, we can look into using a file instead. </p>
+    <code>
+      <pre>
+      lorem_ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      </pre>
+    </code>
+    <p> Then, split the string by any non-characters and filter out any empty strings. </p>
+    <code>
+      <pre>
+        lorem_ipsum_list = list(filter(bool, re.split(r'\W+', lorem_ipsum)))
+      </pre>
+    </code>
+    <p> Then, we can start building our generator. Let's make a new function:</p>
+    <code> 
+      <pre>
+        def generate_text(list):
+      </pre>
+    </code>
+    <p> Great. Next step is to make sure our string starts with "lorem ipsum", by starting off our string with the first two indices of our list. </p>
+    <code>
+      <pre>
+          generated_string = " ".join(list[0:2])
+       </pre>
+    </code>
+    <p> Now, we want to randomize the order of the rest of our words in the list. Let's make a new list excluding "Lorem ipsum", and shuffle that list.</p>
+    <code>
+      <pre>
+          new_list = list[2:]
+          random.shuffle(new_list)
+          </pre>
+    </code>
+    <p> Then, we want to create a random sentence length, and make sure the beginning of new sentences are capitalized, while the ends of existing ones have periods. We'll also lowercase the rest of the words while we're at it. </p>
+    <code>
+      <pre>
+      words_in_sentence = random.randint(3,12)
+      for i in range(len(new_list)):
+          if (words_in_sentence == -1):
+              new_list[i] = new_list[i][0].upper() + new_list[i][1:]
+              words_in_sentence = random.randint(3,12)
+          else:
+              new_list[i] = new_list[i].lower()
+              if (words_in_sentence == 0) or (i==len(new_list) - 1):
+                  new_list[i] += "."
+              words_in_sentence -= 1
+       </pre>
+    </code>
+    <p> Finally, we join this list and concatenate it at the end of our "Lorem ipsum" string. </p>
+    <code>
+          generated_string += " "
+            generated_string += " ".join(new_list)
+          return(generated_string)
+    </code>
+    <p> And there you go! Here's our final code, with output:
+      <code>
+        <pre>
+        import re
+        import random
+        lorem_ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+        lorem_ipsum_list = list(filter(bool, re.split(r'\W+', lorem_ipsum)))
+
+        def generate_text(list):
+            generated_string = " ".join(list[0:2])
+            new_list = list[2:]
+            random.shuffle(new_list)
+            words_in_sentence = random.randint(3,12)
+            for i in range(len(new_list)):
+                if (words_in_sentence == -1):
+                    new_list[i] = new_list[i][0].upper() + new_list[i][1:]
+                    words_in_sentence = random.randint(3,12)
+                else:
+                    new_list[i] = new_list[i].lower()
+                    if (words_in_sentence == 0) or (i==len(new_list) - 1):
+                        new_list[i] += "."
+                    words_in_sentence -= 1
+            generated_string += " "
+            generated_string += " ".join(new_list)
+            return(generated_string)
+
+        print(generate_text(lorem_ipsum_list));
+        
+        Lorem ipsum id magna reprehenderit quis. Esse in commodo excepteur non do. Officia velit consequat laboris duis. Tempor elit ut minim irure aute nostrud anim aliqua et voluptate enim. Sed occaecat in est proident mollit ex incididunt deserunt ut ullamco aliquip. Ut in adipiscing culpa qui dolore eu labore consectetur laborum eiusmod cupidatat sint dolore. Sit veniam sunt exercitation ad nulla. Ea dolor nisi fugiat pariatur cillum dolor amet.
+
+      </pre>
+      </code>
+  </section>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap');
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+#title{
+  text-align: left;
+}
+
+#title h1{
+  display: inline-block;
+  font-family: "Abril Fatface", "cursive";
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 50px;
+  transition: .3s ease-in;
+}
+
+#title h1:hover{
+  margin-left: 5px;
+}
+
+#title h2{
+  display: inline-block;
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+  font-size: 18px;
+  margin: 0px 0px 10px 20px;
+  opacity: .7;
+  transition: .3s ease-in;
+}
+
+#title h2:hover{
+  opacity: 1;
+  margin-left: 30px;
+}
+#img-div {
+  margin: 10px 20px;
+  width: 50vw;
+  max-width: 500px;
+  float: right;
+  transition: .3s ease-in;
+}
+
+#image {
+  border-radius: 1em;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#img-div:hover{
+  transform: scale(1.01);
+}
+#img-caption {
+  max-width: 90%;
+  display: block;
+  margin: auto;
+  font-size: 13px;
+  text-align: justify;
+  opacity: .7;
+  transition: .3s ease-in;
+}
+
+#img-caption:hover{
+  opacity: 1;
+}
+@media only screen and (min-width: 700px){
+  #img-div{
+    margin: 20px 40px;
+  }
+  #image{
+    width: 500px;
+  }
+  #img-caption{
+    width: 500px;
+  }
+}
+#tribute-info{
+  padding: 0px;
+  margin: 0px;
+  text-align: justify
+}
+
+#drop-cap{
+  font-size: 45px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-right: 4px;
+}
+
+p{
+  text-indent: 20px
+}
+
+#first-paragraph{
+  text-indent: 0px
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited{
+  color: purple;
+}
+
+a:hover{
+  opacity: .8;
+}
+
+#main{
+  font-family: "Playfair Display", "serif";
+  float: left;
+  margin: 0px;
+  padding: 4vw;
+  margin-bottom: 30vh;
+  z-index: 2;
+  position: relative;
+  background-color: white;
+  border-bottom: 15px solid #f5f5f5;
+}
+
+#footer{
+  display: inline-block;
+  position: fixed;
+  bottom: 0px;
+  height: 30vh;
+  z-index: 1;
+  left: 0px;
+  text-align: center;
+  background-color: #d6d6d6;
+}
+
+#footer-content{
+  font-family: "Playfair Display", "serif";
+  margin: 8vh;
+  opacity: .8;
+}

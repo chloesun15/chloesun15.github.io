@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Sora&display=swap')
+$bg-color: #2E3A78
+$chart-color: #e9f2f7
+$tooltip-color: #ffeccc
+$sub-font: "Roboto Condensed", sans-serif
+$main-font: "Sora", sans-serif
+
+
+body
+  background-color: $bg-color
+  
+#chart
+  opacity: .8
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 1000px
+  height: 700px
+  margin: auto
+  margin-top: 10px
+  padding: 10px 0px 20px 0px
+  background-color: $chart-color
+  font-family: $sub-font
+  transition: .3s
+  &:hover
+    transform: scale(1.01) rotate(.01deg)
+  h1
+    font-family: $main-font
+
+#tooltip
+  background-color: $tooltip-color
+  transition: opacity .3s
+  padding: 10px
+  margin: 0
+  h3
+    margin: 0
+    padding: 0
+  
+.county
+  transition: .3s
+  &:hover
+    opacity: .7
+    

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400&family=Roboto&display=swap");
+body {
+  background-color: #40386b;
+}
+
+#chart {
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+  color: #40386b;
+  background-color: #fff2f2;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  margin: auto;
+  opacity: 0.9;
+  transition: 0.3s;
+  border: 30px solid white;
+}
+@media screen and (max-width: 1000px) {
+  #chart {
+    width: 1000px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  #chart {
+    width: 1100px;
+  }
+}
+#chart h1 {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+#chart #title, #chart #description {
+  padding: 0;
+  margin: 0;
+}
+#chart p {
+  padding: 5px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  margin: 0px;
+}
+#chart:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+#svg-container {
+  margin: 0;
+  padding: 0px 20px;
+}
+#svg-container svg {
+  vertical-align: top;
+}
+#svg-container rect:hover {
+  stroke-width: 1px;
+  stroke: white;
+}
+#svg-container g {
+  font-size: 12px;
+  font-family: "Roboto";
+}
+
+#legend {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  bottom: 30px;
+  flex-direction: column;
+  width: 520px;
+  margin: auto;
+}
+#legend text {
+  font-size: 20px;
+}
+
+#tooltip {
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+  box-shadow: none;
+  position: absolute;
+  background-color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  padding: 8px 12px;
+}
+#tooltip h3, #tooltip p, #tooltip h4 {
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+#tooltip p, #tooltip h4 {
+  font-family: "Roboto", sans-serif;
+}
+#tooltip h4 {
+  font-style: italic;
+}
+#tooltip p {
+  font-size: 15px;
+}

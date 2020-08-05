@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap')
+
+$main-font: "Roboto Slab", "cursive"
+$sub-font: "Poppins", "sans-serif"
+$main-color: #2b2b2b
+$accent-color: #e8e8e8
+
+  
+=transition-mixin($time, $transition, $style:"")
+  -webkit-transition: #{$style} $time $transition
+  -moz-transition: #{$style} $time $transition
+  -ms-transition: #{$style} $time $transition
+  -o-transition: #{$style} $time $transition
+  transition: #{$style} $time $transition
+
+=scale-mixin($param)
+  -webkit-transform: scale($param)
+  -moz-transform: scale($param)
+  -o-transform: scale($param)
+  -ms-transform: scale($param)
+  transform: scale($param)
+
+body
+  color: $accent-color
+  background-color: $main-color
+  margin: 0px
+ 
+#chart
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  background-color: $main-color
+  margin: auto
+  max-width: fit-content
+    
+#title
+  font-family: $main-font
+  margin: 0px
+  padding: 10px
+  
+#description
+  padding-left: 10px
+  margin: 0px 
+  font-family: $sub-font
+  font-weight: normal
+
+button
+  +transition-mixin(.2s, ease-in-out)
+  font-family: $sub-font
+  margin: 10px
+  opacity: .7
+  color: $accent-color
+  background-color: $main-color
+  border: 1px solid $accent-color
+  &:hover
+    +scale-mixin(1.05)
+    border: 1px solid $accent-color
+    opacity: 1
+    background-color: $accent-color
+    color: $main-color
+    cursor: pointer
+  &:focus
+    outline-style: none
+  
+#svg-container
+  background-color: $main-color
+  margin: 0
+  padding: 10px
+  
+svg
+  margin: 0
+  padding: 0
+  display: block
+  text
+    fill: #e8e8e8
+    font-family: $main-font
+  
+.tile
+  stroke: $main-color
+  stroke-width: 2px
+  opacity: .9
+  &:hover
+    opacity: 1
+  
+#tooltip
+  +transition-mixin(.3s, ease-in, opacity)
+  width: 250px
+  background-color: $accent-color
+  color: $main-color
+  padding: 0
+  margin: 0
+  text-align: center
+  p
+    padding: 1px 5px
+    margin: 0px
+    font-family: $sub-font
+  hr
+    margin: 0px 4px
+    padding: 0px
+  h3
+    font-family: $main-font
+    text-decoration: none
+    font-size: 30px
+    margin: 0
+    padding: 0
+  
