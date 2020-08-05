@@ -122,6 +122,7 @@ body {
 }
 .project-tile a {
   text-decoration: none;
+  color: black;
 }
 .project-tile a:visited {
   color: black;
