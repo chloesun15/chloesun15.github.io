@@ -1,0 +1,125 @@
+//references 
+// https://codepen.io/iamscottcox/pen/xROoyR?editors=1010
+// https://redux.js.org/docs/basics/ExampleTodoList.html
+// https://codepen.io/jnmorse/pen/qbLegO
+// https://codepen.io/tag/react-redux/
+
+//import {combineReducers} from 'redux'
+
+const { combineReducers, createStore} = Redux;
+const { connect, Provider } = ReactRedux;
+
+const NEW = 'NEW';
+const DELETE = 'DELETE';
+function createNew(text) {
+  return {
+    type: 'NEW',
+    text
+  }
+}
+
+function deleteItem(key){
+  return {
+    type: DELETE,
+    key
+  }
+}
+
+const ToDoReducer = (state = [], action) => {
+  switch (action.type){
+    case 'NEW':
+      return [...state, {text: action.text}];
+    case 'DELETE':
+      var newState = [...state];
+      newState.splice(action.key, 1);
+      return newState;
+    default:
+      return state;
+  }
+}
+
+const store = createStore(ToDoReducer);
+
+class Presentational extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      input: ""
+    }
+   this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.keyPressed = this.keyPressed.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  handleChange(event){
+    this.setState({
+      input: event.target.value
+    })
+  }
+  handleSubmit(){
+    if (this.state.input.trim() != "") {this.props.createToDo(this.state.input);}
+    this.setState({
+      input: ""
+    })
+  }
+  
+  keyPressed(event){
+    if (event.key === "Enter") {
+      event.preventDefault()
+    this.handleSubmit()
+  }}
+  
+  handleDelete(id){
+    console.log("handling Delete!");
+    this.props.deleteToDo(id);
+  }
+  
+  render(){
+    return (
+      <div id="body">
+        <h1 id="title"> what do i need to do today?</h1>
+    <div id="main">
+    <div id="input-area">
+      <h2> let me think... </h2>
+        <textarea id="text" value={this.state.input} onChange={this.handleChange} onKeyPress={this.keyPressed} placeholder="...what's one thing i have to do today?"></textarea>
+       <button id="submit" onClick={this.handleSubmit}> add to list </button>
+    </div>
+        <div id="list-div">
+          <h2> my to-do list </h2>
+          <ul>
+    {this.props.todos.map((todo, i) =>{
+          return (
+            <li onClick={() => this.handleDelete(i)}key={i}> {todo.text} </li>)
+            })}</ul>
+        </div></div></div>)
+  }
+}
+
+function mapStateToProps(state){
+  return {todos: state}
+}
+
+function mapDispatchToProps(dispatch){
+  return {createToDo: function(text){
+    dispatch(createNew(text));
+  }, 
+    deleteToDo: function(key){
+      dispatch(deleteItem(key))
+    }}
+}
+
+const Container = ReactRedux.connect(mapStateToProps, mapDispatchToProps)(Presentational)
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  }  
+  render (){
+    return (
+    <Provider store={store}>
+        <Container />
+    </Provider>)
+  }
+}
+                   
+ReactDOM.render(<App />, document.getElementById("App"))

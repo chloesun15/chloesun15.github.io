@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #e5e6e4;
+  color: #847577;
+  text-align: content;
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+}
+body h2 {
+  font-size: 30px;
+}
+
+#main {
+  display: flex;
+  justify-content: flex-start;
+  animation-name: fade-in;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+#title {
+  display: absolute;
+}
+
+#input-area {
+  padding: 30px;
+  width: 40vw;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #a6a2a2;
+  background-color: rgba(207, 210, 205, 0.7);
+  align-self: flex-start;
+}
+#input-area #text {
+  width: 30vw;
+  height: 300px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(166, 162, 162, 0.7);
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+  font-family: "Playfair Display", serif;
+}
+#input-area #text:focus {
+  outline: none;
+}
+
+#list-div {
+  width: 40vw;
+  border: 5px solid #a6a2a2;
+  height: 400px;
+  padding: 30px;
+  margin-left: 5vw;
+  background-color: rgba(207, 210, 205, 0.7);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 330px;
+}
+
+li {
+  float: left;
+  clear: both;
+  font-size: 20px;
+  padding-left: 10px;
+}
+li:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #847577;
+  color: #847577;
+  border-radius: 10%;
+  padding: 5px;
+  margin: 10px;
+  transition: 0.3s ease-in;
+}
+button:hover {
+  background-color: #847577;
+  color: rgba(207, 210, 205, 0.7);
+  cursor: pointer;
+}
