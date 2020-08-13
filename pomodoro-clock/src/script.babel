@@ -1,4 +1,29 @@
-class Presentational extends React.Component{
+const LengthDisplay = (props) => {
+return(<div id={`${props.type}-container`}>
+          <h2 id={`${props.type}-label`}> {props.type} length </h2>
+          <h3 id={`${props.type}-length`}> {props.length} </h3>
+          <div id="button-container">
+          <button id={`${props.type}-decrement`} onClick={props.onClick}> ▼ </button>
+          <button id={`${props.type}-increment`} onClick={props.onClick}> ▲ </button>
+          </div>
+        </div>)
+}
+
+const Timer = (props) => {
+  return(
+  <div id="timer-container">
+          <h2 id="timer-label"> {props.type} </h2>
+          <div id="time-left"> {props.display}
+          </div>
+          <div id="controls">
+            <button onClick={props.handleStartStop} id="start_stop"> {(props.on == true) ? "⏸︎" : "⏵︎"}</button>
+            <button id="reset" onClick={props.handleReset}> reset </button>
+          </div>
+         </div>
+    )
+}
+
+class Container extends React.Component{
   constructor(props){
     super(props);
     
@@ -136,36 +161,13 @@ class Presentational extends React.Component{
   render(){
     return(
     <div id="main">
-        <div id="break-container">
-          <h2 id="break-label"> break length </h2>
-          <h3 id="break-length"> {this.state.breakLength} </h3>
-          <div id="button-container">
-          <button id="break-decrement" onClick={this.handleClick}> ▼ </button>
-          <button id="break-increment" onClick={this.handleClick}> ▲ </button>
-          </div>
-        </div>
-        <div id="session-container">
-          <h2 id="session-label"> session length </h2>
-          <h3 id="session-length"> {this.state.sessionLength}</h3>
-          <div id="button-container">
-          <button id="session-decrement" onClick={this.handleClick}> ▼ </button>
-          <button id="session-increment" onClick={this.handleClick}> ▲ </button>
-          </div>
-        </div>
-        <div id="timer-container">
-          <h2 id="timer-label"> {this.state.type} </h2>
-          <div id="time-left"> 
-            {this.state.display}
-          </div>
-          <audio id="beep" 
+        <LengthDisplay type="break" length={this.state.breakLength} onClick={this.handleClick} />
+        <LengthDisplay type="session" length={this.state.sessionLength} onClick={this.handleClick} />
+        <Timer type={this.state.type} display={this.state.display} handleStartStop={this.handleStartStop} handleReset={this.handleReset} on={this.state.on} />
+        <audio id="beep" 
                  src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" 
                  ref={(audio) => {this.audioBeep = audio;}}>
           </audio>
-          <div id="controls">
-            <button onClick={this.handleStartStop} id="start_stop"> {(this.state.on == true) ? "⏸︎" : "⏵︎"}</button>
-            <button id="reset" onClick={this.handleReset}> reset </button>
-          </div>
-         </div>
     </div>)
   }
 }
@@ -179,7 +181,7 @@ class App extends React.Component{
   render(){
     return(
     <div>
-        <Presentational /> 
+        <Container /> 
      </div>)
   }
 }
